@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div> Hello </div>  
+  <!-- ejs view allow code execution in its html/ejs file -->
+  <div> Hello <%= 2+2 %> </div>  
+
+  <!-- One can access server variable here. thanks to ejs view engine -->
+  <div> Hello <%= text %> </div> 
+
+  <!-- Sometimes the variable may not exist and could lead to error.
+   a clean way to access the variable is through the object called "local"
+   It holds all server variable and through it one can access them.
+   Therefore, we would access the text variable through it and also provide
+   a default value to render when the variable does not exist.-->
+  <div> Hello <%= locals.text || 'Default' %> </div> 
+    
+</body>
+</html>

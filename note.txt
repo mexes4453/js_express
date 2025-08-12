@@ -1,0 +1,46 @@
+
+# How to create table, columns and rows in pgAdmin
+https://www.youtube.com/watch?v=NhfeCY4FwGk
+
+
+# Setup .env file to store sensitive data for use in javascript
+https://www.youtube.com/watch?v=hZUNMYU4Kzo
+
+
+# Main video: how to use web api with express and postgres to be
+# + consumed from the webbrowser as a client.
+https://www.youtube.com/watch?v=0JNq46eFuOM
+
+
+npm init -y          : start a new node js project
+npm install dotenv   : install dotenv package to read .env files
+npm install pg       : install postgres client package 
+npm install express  : install express package to serve http as server
+npm install nodemon  : install nodemon package to manage server startup
+npm install ejs      : install package to create template files
+                     + This will enable creation of *.ejs files which 
+                     + replace *.html files and ejs files should be stored
+                     + in a folder called "view"
+
+
+
+# ----------------------------------------------------------------------
+# Alternative way to access a website or a server as a client using the
+# fetch command
+# ----------------------------------------------------------------------
+fetch("http://localhost:8080/todo", { method: "GET"})
+.then(a => a.json())
+.then( console.log)
+
+
+
+Fetch API, XMLHTTPRequest replacement
+https://www.youtube.com/watch?v=Vj7W8pI-L6w
+
+
+user authentication with nodejs and postgress
+https://www.youtube.com/watch?v=vxu1RrR0vbw
+
+
+learn express js in 35mins
+https://www.youtube.com/watch?v=SccSCuHhOw0
