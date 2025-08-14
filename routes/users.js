@@ -7,8 +7,6 @@ const express = require("express")
 const router = express.Router()
 
 
-
-
 /* users will be remove as this file is dedicated to users routing */
 /*>
  * Routes : /users 

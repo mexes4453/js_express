@@ -5,13 +5,37 @@ const express = require("express")
 const app = express();
 
 
-/* Configure the server to use ejs engine for render view files
- * like */
+/*>
+ * Configure the server to use ejs engine for render view files
+ * This implies we will rename all *.html files to *.ejs */
 app.set('view engine', 'ejs')
+
+/*>
+ * Attach middleware functions that run for every request (or specific paths).
+ * Middleware can:
+ * Modify req / res
+ * Handle authentication
+ * Serve static files
+ * Log requests
+ * Parse incoming JSON/form data
+ * ====
+ * Note that if this line of code appears below a route configuration. then
+ * it will not be used when clients makes request to the route because,
+ * execution flows from top to bottom.
+*/
+app.use(appLogger)
+
+function appLogger(req, res, next)
+{
+    console.log(req.originalUrl);
+    next(); // Pass control to next middleware
+}
 
 /* Routes: Home */
 /* client get request  upon connection to website: homepage */
-app.get('/', (req, res) => {
+/* Note that a route can be passed multiple middleware function
+ * as shown below */ 
+app.get('/', appLogger, appLogger, (req, res) => {
     console.log("Server log: homepage");
 
     /*>
@@ -45,7 +69,7 @@ app.get('/', (req, res) => {
      *   + This directory will store *.html and *.ejs files for rendering
      * > pass the name of ejs files as string args to the method render.
      * */
-    res.render("index");
+    //res.render("index");
 
     res.render("index", { text: "world"});
 })
